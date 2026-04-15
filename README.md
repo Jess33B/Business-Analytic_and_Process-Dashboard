@@ -64,3 +64,6 @@ The project is built on a robust star schema architecture to ensure optimal perf
 - Detection of bottlenecks in the Quality Control department, which accounts for 40 percent of operational delays.
 - Correlation between customer credit scores and profit margins, enabling more targeted credit risk policies.
 - Tracking of on-time delivery rates against a 90 percent baseline target.
+
+  ## Output Images
+  ![image alt](1.png)
