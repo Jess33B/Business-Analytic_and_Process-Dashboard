@@ -66,4 +66,10 @@ The project is built on a robust star schema architecture to ensure optimal perf
 - Tracking of on-time delivery rates against a 90 percent baseline target.
 
   ## Output Images
-  ![image alt](1.png)
+![image alt](1.png)
+![image alt](2.png)
+![image alt](3.png)
+![image alt](4.png)
+![image alt](5.png)
+
+
