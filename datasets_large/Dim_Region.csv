@@ -1,0 +1,5 @@
+RegionID,RegionName,RegionManager,HeadquartersCity,SalesTarget_Annual,CostCenter
+R001,North,Jennifer Walsh,Chicago,3200000,CC-NORTH-01
+R002,South,Marcus Thompson,Dallas,4500000,CC-SOUTH-01
+R003,East,Priya Sharma,New York,3800000,CC-EAST-01
+R004,West,James Martinez,San Francisco,4000000,CC-WEST-01

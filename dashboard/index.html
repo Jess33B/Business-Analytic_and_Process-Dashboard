@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions — Business Analytics Dashboard</title>
+    <meta name="description" content="Business Analytics & Process Optimization Dashboard for TechNova Solutions. Revenue analysis, customer segmentation, and process performance tracking.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">TN</div>
+            <span class="logo-text">TechNova</span>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item active" data-page="overview">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Overview</span>
+            </li>
+            <li class="nav-item" data-page="customers">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Customers</span>
+            </li>
+            <li class="nav-item" data-page="operations">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <span>Operations</span>
+            </li>
+            <li class="nav-item" data-page="products">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                <span>Products</span>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="refresh-info">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span id="lastRefresh">Loading...</span>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+
+        <header class="header">
+            <div class="header-left">
+                <h1 id="pageTitle">Executive Overview</h1>
+                <p class="header-subtitle" id="pageSubtitle">Business Analytics & Process Optimization</p>
+            </div>
+            <div class="header-right">
+                <div class="filter-group">
+                    <label>Year</label>
+                    <select id="filterYear" class="filter-select">
+                        <option value="all">All Years</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Region</label>
+                    <select id="filterRegion" class="filter-select">
+                        <option value="all">All Regions</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="filterCategory" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Services">Services</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="page active" id="page-overview">
+
+            <div class="kpi-grid">
+                <div class="kpi-card" id="kpi-revenue">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Total Revenue</span>
+                        <div class="kpi-icon revenue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiRevenue">$0</div>
+                    <div class="kpi-trend up" id="kpiRevenueTrend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-value">0%</span>
+                        <span class="trend-label">vs last year</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkRevenue"></canvas></div>
+                </div>
+                <div class="kpi-card" id="kpi-profit">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Profit Margin</span>
+                        <div class="kpi-icon profit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiProfitMargin">0%</div>
+                    <div class="kpi-trend up" id="kpiProfitTrend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-value">0%</span>
+                        <span class="trend-label">vs last year</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkProfit"></canvas></div>
+                </div>
+                <div class="kpi-card" id="kpi-customers">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Active Customers</span>
+                        <div class="kpi-icon customers">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiCustomers">0</div>
+                    <div class="kpi-trend up" id="kpiCustomersTrend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-value">0</span>
+                        <span class="trend-label">unique buyers</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkCustomers"></canvas></div>
+                </div>
+                <div class="kpi-card" id="kpi-orders">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Total Orders</span>
+                        <div class="kpi-icon orders">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiOrders">0</div>
+                    <div class="kpi-trend up" id="kpiOrdersTrend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-value">0%</span>
+                        <span class="trend-label">completion rate</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkOrders"></canvas></div>
+                </div>
+                <div class="kpi-card" id="kpi-cycletime">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Avg Cycle Time</span>
+                        <div class="kpi-icon cycle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiCycleTime">0 hrs</div>
+                    <div class="kpi-trend down" id="kpiCycleTrend">
+                        <span class="trend-arrow">▼</span>
+                        <span class="trend-value">0%</span>
+                        <span class="trend-label">delay rate</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkCycle"></canvas></div>
+                </div>
+                <div class="kpi-card" id="kpi-efficiency">
+                    <div class="kpi-header">
+                        <span class="kpi-label">Process Efficiency</span>
+                        <div class="kpi-icon efficiency">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiEfficiency">0%</div>
+                    <div class="kpi-trend up" id="kpiEffTrend">
+                        <span class="trend-arrow">▲</span>
+                        <span class="trend-value">0%</span>
+                        <span class="trend-label">on-time rate</span>
+                    </div>
+                    <div class="kpi-sparkline"><canvas id="sparkEfficiency"></canvas></div>
+                </div>
+            </div>
+
+
+            <div class="charts-row">
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Revenue Trend</h3>
+                        <div class="chart-actions">
+                            <button class="chart-btn active" data-view="monthly">Monthly</button>
+                            <button class="chart-btn" data-view="quarterly">Quarterly</button>
+                        </div>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartRevenueTrend"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Revenue by Segment</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartSegment"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="charts-row">
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Revenue by Region</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartRegion"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Top 10 Customers</h3>
+                    </div>
+                    <div class="chart-body table-body">
+                        <table class="data-table" id="topCustomersTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Customer</th>
+                                    <th>Segment</th>
+                                    <th>Revenue</th>
+                                    <th>Orders</th>
+                                    <th>Margin</th>
+                                    <th>Revenue Bar</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="page" id="page-customers">
+            <div class="charts-row">
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Customer Segments</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartCustSegment"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Revenue by Industry</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartIndustry"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-row">
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Customer Revenue Distribution</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartCustRevenue"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Revenue by Credit Score</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartCreditScore"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="page" id="page-operations">
+            <div class="charts-row">
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Cycle Time by Department</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartDeptCycle"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Delay Reasons Breakdown</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartDelayReasons"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-row">
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Planned vs Actual Duration</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartPlannedVsActual"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Process Performance by Step</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartProcessStep"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="page" id="page-products">
+            <div class="charts-row">
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Revenue by Product Category</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartProdCategory"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Top Selling Products</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartTopProducts"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts-row">
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Sales Channel Performance</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartSalesChannel"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card medium">
+                    <div class="chart-header">
+                        <h3>Profit Margin by Category</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chartMarginCategory"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

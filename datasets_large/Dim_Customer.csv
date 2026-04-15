@@ -1,0 +1,61 @@
+CustomerID,CustomerName,Segment,Industry,City,Region,State,Country,AccountManager,CustomerSince,CreditScore,IsActive
+C001,Pulse Systems,Enterprise,Pharmaceuticals,Charlotte,South,NC,USA,Emily Rodriguez,2022-02-22,B,Yes
+C002,Magna Services,Enterprise,Logistics,Charlotte,South,NC,USA,Sarah Johnson,2021-04-23,B,Yes
+C003,Omni Enterprises,SMB,Technology,New Orleans,South,LA,USA,Robert Garcia,2019-03-07,C,Yes
+C004,Fusion Ventures,Enterprise,Professional Services,New York,East,NY,USA,Christopher Brown,2021-02-13,A,Yes
+C005,Pulse Consulting,Government,Professional Services,Miami,South,FL,USA,Sarah Johnson,2022-04-25,A,Yes
+C006,Omni Systems,SMB,Agriculture,Princeton,East,NJ,USA,Robert Garcia,2019-04-22,A,No
+C007,Quest Inc,SMB,Retail,Atlanta,South,GA,USA,Christopher Brown,2020-05-21,B,Yes
+C008,Urban Solutions,Enterprise,Manufacturing,Washington DC,East,DC,USA,Jessica Lee,2017-04-19,C,Yes
+C009,Quest Analytics,SMB,Agriculture,Nashville,South,TN,USA,Emily Rodriguez,2018-12-18,B,Yes
+C010,Blue Engineering,SMB,Aerospace,Arlington,South,VA,USA,Christopher Brown,2017-01-28,A,Yes
+C011,Zeta Services,SMB,Public Sector,Boise,West,ID,USA,Jessica Lee,2021-01-22,B,Yes
+C012,Iron Dynamics,Startup,Telecommunications,Minneapolis,North,MN,USA,Amanda Wilson,2018-08-01,C,Yes
+C013,Quantum Holdings,Startup,Hospitality,Des Moines,North,IA,USA,Jessica Lee,2023-11-17,B,Yes
+C014,Xero Group,SMB,Hospitality,Columbus,North,OH,USA,Robert Garcia,2020-01-04,C,Yes
+C015,Core Partners,Enterprise,Aerospace,Chicago,North,IL,USA,Christopher Brown,2023-02-25,B,Yes
+C016,Ridge Analytics,Government,Retail,Washington DC,East,DC,USA,David Kim,2021-12-23,A,Yes
+C017,Ridge Networks,SMB,Hospitality,Seattle,West,WA,USA,David Kim,2018-02-11,A,Yes
+C018,Magna Global,Enterprise,Manufacturing,Miami,South,FL,USA,Sarah Johnson,2023-06-03,B,Yes
+C019,Forge Industries,SMB,Education,Denver,West,CO,USA,Christopher Brown,2023-07-07,A,Yes
+C020,Wave Services,SMB,Manufacturing,Chicago,North,IL,USA,Amanda Wilson,2022-06-26,C,Yes
+C021,Metro Digital,SMB,Defense,Nashville,South,TN,USA,Christopher Brown,2018-02-15,C,Yes
+C022,Granite Solutions,SMB,Engineering,Chicago,North,IL,USA,David Kim,2018-07-16,B,Yes
+C023,Glow Solutions,Enterprise,Technology,Phoenix,West,AZ,USA,Christopher Brown,2019-07-23,C,No
+C024,Krypton Analytics,Enterprise,Construction,Dallas,South,TX,USA,Sarah Johnson,2022-06-02,A,Yes
+C025,Drift Holdings,Enterprise,Hospitality,Des Moines,North,IA,USA,Emily Rodriguez,2017-10-03,B,Yes
+C026,Harbor Engineering,Enterprise,Automotive,Columbus,North,OH,USA,Michael Chen,2020-11-19,B,Yes
+C027,Quantum Industries,SMB,Telecommunications,Nashville,South,TN,USA,Amanda Wilson,2018-11-21,A,Yes
+C028,Xero Inc,Enterprise,Automotive,Chicago,North,IL,USA,David Kim,2021-05-05,C,Yes
+C029,Flux Global,SMB,Retail,Phoenix,West,AZ,USA,Sarah Johnson,2022-09-10,C,Yes
+C030,Flux Technologies,Enterprise,Financial Services,Nashville,South,TN,USA,Jessica Lee,2021-04-23,A,Yes
+C031,Drift Dynamics,SMB,Pharmaceuticals,Chicago,North,IL,USA,Amanda Wilson,2023-05-02,A,Yes
+C032,Pulse Dynamics,Enterprise,Agriculture,San Francisco,West,CA,USA,Michael Chen,2017-12-05,B,Yes
+C033,Magna Digital,Enterprise,Healthcare,Minneapolis,North,MN,USA,Robert Garcia,2023-01-12,A,Yes
+C034,Granite Networks,Startup,Defense,Charlotte,South,NC,USA,Emily Rodriguez,2023-03-14,A,Yes
+C035,Valor Services,Startup,Aerospace,Princeton,East,NJ,USA,Michael Chen,2020-01-28,B,Yes
+C036,Dyna Networks,Enterprise,Aerospace,Dallas,South,TX,USA,David Kim,2020-06-09,C,No
+C037,Red Networks,SMB,Public Sector,New York,East,NY,USA,Michael Chen,2019-03-19,C,Yes
+C038,Granite Consulting,SMB,Telecommunications,Seattle,West,WA,USA,Amanda Wilson,2021-04-09,A,Yes
+C039,Helix Digital,SMB,Energy,Washington DC,East,DC,USA,Michael Chen,2022-06-20,A,Yes
+C040,Vortex Partners,SMB,Defense,Washington DC,East,DC,USA,Jessica Lee,2021-03-07,A,No
+C041,Spark Group,SMB,Construction,San Francisco,West,CA,USA,Jessica Lee,2019-04-14,B,Yes
+C042,Urban Enterprises,SMB,Energy,Portland,West,OR,USA,Michael Chen,2019-09-22,B,Yes
+C043,Beacon Global,SMB,Aerospace,Atlanta,South,GA,USA,Sarah Johnson,2017-04-16,B,Yes
+C044,Dyna Services,Government,Education,New Orleans,South,LA,USA,Christopher Brown,2020-04-05,B,Yes
+C045,Xero Systems,Startup,Aerospace,Arlington,South,VA,USA,Christopher Brown,2017-09-08,C,Yes
+C046,Innovate Enterprises,SMB,Engineering,Wilmington,East,DE,USA,Amanda Wilson,2023-09-15,C,Yes
+C047,Eagle Enterprises,Enterprise,Aerospace,Wilmington,East,DE,USA,David Kim,2019-08-03,B,Yes
+C048,Valor Labs,Government,Logistics,Atlanta,South,GA,USA,David Kim,2020-12-05,B,Yes
+C049,Acme Labs,SMB,Defense,Detroit,North,MI,USA,Amanda Wilson,2020-10-23,A,Yes
+C050,Luna Ventures,SMB,Professional Services,Washington DC,East,DC,USA,Amanda Wilson,2021-12-24,B,Yes
+C051,Omni Analytics,Enterprise,Defense,San Francisco,West,CA,USA,Amanda Wilson,2019-11-22,B,Yes
+C052,Core Enterprises,Government,Automotive,Milwaukee,North,WI,USA,Sarah Johnson,2017-11-14,A,Yes
+C053,Delta Dynamics,SMB,Energy,Las Vegas,West,NV,USA,Robert Garcia,2023-07-09,B,Yes
+C054,Quantum Inc,SMB,Engineering,Minneapolis,North,MN,USA,David Kim,2022-02-25,C,Yes
+C055,Bright Global,Enterprise,Technology,Charlotte,South,NC,USA,Emily Rodriguez,2020-11-04,B,Yes
+C056,Titan Dynamics,Startup,Retail,Des Moines,North,IA,USA,Emily Rodriguez,2019-02-19,A,Yes
+C057,Spark Ventures,SMB,Energy,Columbus,North,OH,USA,David Kim,2017-12-25,A,Yes
+C058,Atlas Systems,Startup,Education,Minneapolis,North,MN,USA,Amanda Wilson,2022-06-03,B,Yes
+C059,Drift Services,Startup,Financial Services,Las Vegas,West,NV,USA,Christopher Brown,2022-03-14,A,Yes
+C060,Quest Dynamics,SMB,Engineering,Boise,West,ID,USA,Amanda Wilson,2023-12-19,A,Yes

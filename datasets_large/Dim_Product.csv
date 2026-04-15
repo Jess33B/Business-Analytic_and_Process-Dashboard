@@ -1,0 +1,31 @@
+ProductID,ProductName,Category,SubCategory,UnitCost,ListPrice,GrossMarginPct,Supplier,Weight_kg,IsActive
+P001,Enterprise Server X500,Hardware,Servers,4200,6800,38.2,TechParts Global,18.5,Yes
+P002,CloudSync Pro License,Software,Cloud Services,50,299,83.3,Internal,0,Yes
+P003,Network Switch 48-Port,Hardware,Networking,680,1150,40.9,NetGear Solutions,3.2,Yes
+P004,DataGuard Backup Suite,Software,Security,120,499,76.0,Internal,0,Yes
+P005,"Smart Display Panel 65""",Hardware,Displays,1800,3200,43.8,VisualTech Inc,22.0,Yes
+P006,Managed IT Support (Annual),Services,Support,2400,5500,56.4,Internal,0,Yes
+P007,Wireless Access Point Pro,Hardware,Networking,220,450,51.1,NetGear Solutions,0.8,Yes
+P008,ERP Integration Module,Software,Enterprise,800,2200,63.6,Internal,0,Yes
+P009,Cybersecurity Audit,Services,Security,1500,3800,60.5,Internal,0,Yes
+P010,Laptop Workstation Z14,Hardware,Computing,1100,1850,40.5,TechParts Global,2.1,Yes
+P011,Office Productivity Suite,Software,Productivity,30,149,79.9,Internal,0,Yes
+P012,Data Analytics Platform,Software,Analytics,400,1200,66.7,Internal,0,Yes
+P013,Cloud Migration Service,Services,Cloud Services,3200,7500,57.3,Internal,0,Yes
+P014,UPS Battery System 3kVA,Hardware,Power,950,1650,42.4,PowerLine Corp,28.0,Yes
+P015,Project Management Tool,Software,Productivity,60,199,69.8,Internal,0,Yes
+P016,Staff Training Program,Services,Training,800,2000,60.0,Internal,0,Yes
+P017,IoT Sensor Kit (100-pack),Hardware,IoT,1200,2400,50.0,SensorTech Ltd,5.5,Yes
+P018,AI/ML Development Platform,Software,Analytics,600,1800,66.7,Internal,0,Yes
+P019,Network Assessment Service,Services,Networking,500,1200,58.3,Internal,0,Yes
+P020,Storage Array 50TB,Hardware,Storage,3500,5800,39.7,StoragePro Inc,15.0,Yes
+P021,Endpoint Protection Suite,Software,Security,80,349,77.1,Internal,0,Yes
+P022,Video Conferencing System,Hardware,Communication,1500,2800,46.4,VisualTech Inc,8.0,Yes
+P023,DevOps Pipeline Tool,Software,Development,200,699,71.4,Internal,0,Yes
+P024,Disaster Recovery Service,Services,Security,2800,6200,54.8,Internal,0,Yes
+P025,Edge Computing Module,Hardware,IoT,900,1800,50.0,SensorTech Ltd,2.5,Yes
+P026,CRM Platform License,Software,Enterprise,150,599,74.9,Internal,0,Yes
+P027,Penetration Testing,Services,Security,2000,4500,55.6,Internal,0,Yes
+P028,Industrial Router,Hardware,Networking,400,850,52.9,NetGear Solutions,1.8,Yes
+P029,Business Intelligence Suite,Software,Analytics,500,1500,66.7,Internal,0,Yes
+P030,IT Strategy Consulting,Services,Consulting,3500,8000,56.3,Internal,0,Yes

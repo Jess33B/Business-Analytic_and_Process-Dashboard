@@ -1,0 +1,286 @@
+Total Revenue = 
+    SUM(Fact_Sales[TotalAmount])
+
+Revenue Completed = 
+    CALCULATE(
+        SUM(Fact_Sales[TotalAmount]),
+        Fact_Sales[OrderStatus] = "Completed"
+    )
+
+Revenue Previous Month = 
+    CALCULATE(
+        [Total Revenue],
+        DATEADD(Dim_Date[Date], -1, MONTH)
+    )
+
+Revenue Previous Year = 
+    CALCULATE(
+        [Total Revenue],
+        SAMEPERIODLASTYEAR(Dim_Date[Date])
+    )
+
+Revenue Growth Rate MoM = 
+    VAR CurrentRevenue = [Total Revenue]
+    VAR PreviousRevenue = [Revenue Previous Month]
+    RETURN
+        IF(
+            ISBLANK(PreviousRevenue) || PreviousRevenue = 0,
+            BLANK(),
+            DIVIDE(CurrentRevenue - PreviousRevenue, PreviousRevenue, 0)
+        )
+
+Revenue Growth Rate YoY = 
+    VAR CurrentRevenue = [Total Revenue]
+    VAR PreviousRevenue = [Revenue Previous Year]
+    RETURN
+        IF(
+            ISBLANK(PreviousRevenue) || PreviousRevenue = 0,
+            BLANK(),
+            DIVIDE(CurrentRevenue - PreviousRevenue, PreviousRevenue, 0)
+        )
+
+Revenue YTD = 
+    TOTALYTD([Total Revenue], Dim_Date[Date])
+
+Revenue PYTD = 
+    CALCULATE(
+        TOTALYTD([Total Revenue], Dim_Date[Date]),
+        SAMEPERIODLASTYEAR(Dim_Date[Date])
+    )
+
+Revenue vs Target = 
+    VAR ActualRev = [Total Revenue]
+    VAR TargetRev = SUM(Dim_Region[SalesTarget_Annual])
+    RETURN
+        DIVIDE(ActualRev, TargetRev, 0) - 1
+
+Avg Order Value = 
+    AVERAGE(Fact_Sales[TotalAmount])
+
+Gross Revenue = 
+    SUM(Fact_Sales[GrossRevenue])
+
+Total Profit = 
+    SUM(Fact_Sales[Profit])
+
+Total COGS = 
+    SUM(Fact_Sales[COGS])
+
+Profit Margin = 
+    DIVIDE([Total Profit], [Total Revenue], 0)
+
+Gross Margin = 
+    DIVIDE([Total Revenue] - [Total COGS], [Total Revenue], 0)
+
+Profit Margin PM = 
+    CALCULATE(
+        [Profit Margin],
+        DATEADD(Dim_Date[Date], -1, MONTH)
+    )
+
+Total Discount Given = 
+    SUM(Fact_Sales[DiscountAmount])
+
+Discount Rate = 
+    DIVIDE([Total Discount Given], [Gross Revenue], 0)
+
+Lost Revenue = 
+    CALCULATE(
+        SUM(Fact_Sales[TotalAmount]),
+        Fact_Sales[OrderStatus] IN {"Cancelled", "Returned"}
+    )
+
+Loss Rate = 
+    DIVIDE([Lost Revenue], [Gross Revenue], 0)
+
+Total Orders = 
+    COUNTROWS(Fact_Sales)
+
+Completed Orders = 
+    CALCULATE(
+        COUNTROWS(Fact_Sales),
+        Fact_Sales[OrderStatus] = "Completed"
+    )
+
+Order Completion Rate = 
+    DIVIDE([Completed Orders], [Total Orders], 0)
+
+Total Qty Sold = 
+    SUM(Fact_Sales[Quantity])
+
+Total Customers = 
+    DISTINCTCOUNT(Fact_Sales[CustomerID])
+
+New Customers = 
+    VAR CurrentPeriodCustomers = 
+        VALUES(Fact_Sales[CustomerID])
+    VAR PreviousPeriodCustomers = 
+        CALCULATETABLE(
+            VALUES(Fact_Sales[CustomerID]),
+            DATEADD(Dim_Date[Date], -1, YEAR)
+        )
+    RETURN
+        COUNTROWS(
+            EXCEPT(CurrentPeriodCustomers, PreviousPeriodCustomers)
+        )
+
+Customer Retention Rate = 
+    VAR CurrentCustomers = VALUES(Fact_Sales[CustomerID])
+    VAR PreviousCustomers = 
+        CALCULATETABLE(
+            VALUES(Fact_Sales[CustomerID]),
+            DATEADD(Dim_Date[Date], -1, YEAR)
+        )
+    VAR RetainedCustomers = 
+        COUNTROWS(
+            INTERSECT(CurrentCustomers, PreviousCustomers)
+        )
+    VAR TotalPreviousCustomers = COUNTROWS(PreviousCustomers)
+    RETURN
+        DIVIDE(RetainedCustomers, TotalPreviousCustomers, BLANK())
+
+Customer LTV = 
+    DIVIDE([Total Revenue], [Total Customers], 0)
+
+Avg Orders per Customer = 
+    DIVIDE([Total Orders], [Total Customers], 0)
+
+Segment Revenue Share = 
+    DIVIDE(
+        [Total Revenue],
+        CALCULATE([Total Revenue], ALL(Dim_Customer[Segment]))
+    )
+
+Top 10 Customer Revenue = 
+    VAR Top10 = 
+        TOPN(10, ALL(Dim_Customer[CustomerID]), [Total Revenue], DESC)
+    RETURN
+        CALCULATE([Total Revenue], Top10)
+
+Top 10 Concentration = 
+    DIVIDE([Top 10 Customer Revenue], CALCULATE([Total Revenue], ALL(Dim_Customer)), 0)
+
+Avg Cycle Time = 
+    AVERAGEX(
+        VALUES(Fact_Process_Metrics[OrderID]),
+        CALCULATE(SUM(Fact_Process_Metrics[ActualDuration_hrs]))
+    )
+
+Avg Planned Cycle Time = 
+    AVERAGEX(
+        VALUES(Fact_Process_Metrics[OrderID]),
+        CALCULATE(SUM(Fact_Process_Metrics[PlannedDuration_hrs]))
+    )
+
+Cycle Time Variance = 
+    [Avg Cycle Time] - [Avg Planned Cycle Time]
+
+Throughput = 
+    CALCULATE(
+        DISTINCTCOUNT(Fact_Sales[OrderID]),
+        Fact_Sales[OrderStatus] = "Completed"
+    )
+
+Delay Percentage = 
+    VAR DelayedSteps = 
+        CALCULATE(
+            COUNTROWS(Fact_Process_Metrics),
+            Fact_Process_Metrics[IsDelayed] = TRUE
+        )
+    VAR TotalSteps = COUNTROWS(Fact_Process_Metrics)
+    RETURN
+        DIVIDE(DelayedSteps, TotalSteps, 0)
+
+Total Delay Hours = 
+    SUM(Fact_Process_Metrics[DelayDuration_hrs])
+
+Avg Process Efficiency = 
+    AVERAGE(Fact_Process_Metrics[EfficiencyPct])
+
+On-Time Rate = 
+    VAR OnTimeSteps = 
+        CALCULATE(
+            COUNTROWS(Fact_Process_Metrics),
+            Fact_Process_Metrics[IsDelayed] = FALSE
+        )
+    VAR TotalSteps = COUNTROWS(Fact_Process_Metrics)
+    RETURN
+        DIVIDE(OnTimeSteps, TotalSteps, 0)
+
+Bottleneck Score = 
+    VAR AvgDelay = AVERAGE(Fact_Process_Metrics[DelayDuration_hrs])
+    VAR DelayFreq = [Delay Percentage]
+    RETURN
+        AvgDelay * DelayFreq * 100
+
+Revenue Trend Indicator = 
+    VAR Growth = [Revenue Growth Rate MoM]
+    RETURN
+    IF(ISBLANK(Growth), "",
+       IF(Growth > 0.05, "▲ " & FORMAT(Growth, "0.0%"),
+          IF(Growth > -0.05, "► " & FORMAT(Growth, "0.0%"),
+             "▼ " & FORMAT(Growth, "0.0%"))))
+
+Profit Margin RAG = 
+    SWITCH(
+        TRUE(),
+        [Profit Margin] >= 0.35, 1,
+        [Profit Margin] >= 0.20, 2,
+        3
+    )
+
+Delay RAG = 
+    SWITCH(
+        TRUE(),
+        [Delay Percentage] <= 0.15, 1,
+        [Delay Percentage] <= 0.30, 2,
+        3
+    )
+
+Efficiency RAG = 
+    SWITCH(
+        TRUE(),
+        [Avg Process Efficiency] >= 90, 1,
+        [Avg Process Efficiency] >= 75, 2,
+        3
+    )
+
+Revenue Subtitle = 
+    VAR Growth = [Revenue Growth Rate MoM]
+    RETURN
+        IF(ISBLANK(Growth), "No prior data",
+           IF(Growth >= 0,
+              "+" & FORMAT(Growth, "0.0%") & " vs last month",
+              FORMAT(Growth, "0.0%") & " vs last month"))
+
+Dynamic Title = 
+    VAR SelectedYear = SELECTEDVALUE(Dim_Date[Year], "All Years")
+    VAR SelectedRegion = SELECTEDVALUE(Dim_Region[RegionName], "All Regions")
+    RETURN
+        "TechNova Analytics | " & SelectedYear & " | " & SelectedRegion
+
+Selected Period = 
+    VAR MinDate = MIN(Dim_Date[Date])
+    VAR MaxDate = MAX(Dim_Date[Date])
+    RETURN
+        FORMAT(MinDate, "MMM YYYY") & " - " & FORMAT(MaxDate, "MMM YYYY")
+
+Last Refresh = 
+    "Data as of: " & FORMAT(NOW(), "DD-MMM-YYYY HH:MM")
+
+Customer Rank = 
+    IF(
+        HASONEVALUE(Dim_Customer[CustomerName]),
+        RANKX(ALL(Dim_Customer[CustomerName]), [Total Revenue], , DESC, Dense)
+    )
+
+Product Rank = 
+    IF(
+        HASONEVALUE(Dim_Product[ProductName]),
+        RANKX(ALL(Dim_Product[ProductName]), [Total Revenue], , DESC, Dense)
+    )
+
+Is Top 10 Customer = 
+    VAR Rank = [Customer Rank]
+    RETURN
+        IF(NOT(ISBLANK(Rank)) && Rank <= 10, TRUE(), FALSE())

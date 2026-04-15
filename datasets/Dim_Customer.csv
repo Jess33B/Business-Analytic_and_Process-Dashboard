@@ -1,0 +1,31 @@
+CustomerID,CustomerName,Segment,Industry,City,Region,State,Country,AccountManager,CustomerSince,CreditScore,IsActive
+C001,Apex Manufacturing Corp,Enterprise,Manufacturing,Chicago,North,Illinois,USA,Sarah Johnson,2019-03-15,A,Yes
+C002,BrightTech Solutions,SMB,Technology,Austin,South,Texas,USA,Michael Chen,2020-07-22,B,Yes
+C003,ClearView Analytics,Startup,Technology,San Francisco,West,California,USA,Emily Rodriguez,2022-01-10,B,Yes
+C004,Delta Logistics Inc,Enterprise,Logistics,New York,East,New York,USA,Sarah Johnson,2018-11-05,A,Yes
+C005,EcoGreen Supplies,SMB,Retail,Portland,West,Oregon,USA,David Kim,2021-04-18,B,Yes
+C006,FusionWare Systems,Enterprise,Technology,Seattle,West,Washington,USA,Michael Chen,2017-09-30,A,Yes
+C007,Granite Construction LLC,Enterprise,Construction,Denver,West,Colorado,USA,David Kim,2019-06-12,A,Yes
+C008,Harbor Health Services,SMB,Healthcare,Boston,East,Massachusetts,USA,Emily Rodriguez,2020-02-28,B,Yes
+C009,InnovatePharma Ltd,Enterprise,Pharmaceuticals,Princeton,East,New Jersey,USA,Sarah Johnson,2018-05-20,A,Yes
+C010,Jupiter Financial Group,Enterprise,Financial Services,Charlotte,South,North Carolina,USA,Michael Chen,2017-12-01,A,Yes
+C011,KeyStone Retail,SMB,Retail,Atlanta,South,Georgia,USA,Emily Rodriguez,2021-08-14,C,Yes
+C012,Landmark Engineering,SMB,Engineering,Houston,South,Texas,USA,David Kim,2020-11-03,B,Yes
+C013,Metro City Government,Government,Public Sector,Phoenix,West,Arizona,USA,Sarah Johnson,2019-01-15,A,Yes
+C014,NexGen Robotics,Startup,Manufacturing,Pittsburgh,East,Pennsylvania,USA,Michael Chen,2022-06-22,C,Yes
+C015,Omni Distribution Co,Enterprise,Logistics,Dallas,South,Texas,USA,Emily Rodriguez,2018-08-10,A,Yes
+C016,PrimeWave Telecom,Enterprise,Telecommunications,Miami,South,Florida,USA,David Kim,2017-04-25,A,Yes
+C017,QuantumLeap AI,Startup,Technology,San Jose,West,California,USA,Michael Chen,2023-02-14,C,Yes
+C018,RedOak Furniture,SMB,Manufacturing,Grand Rapids,North,Michigan,USA,Sarah Johnson,2021-05-30,B,Yes
+C019,SilverLine Transport,SMB,Logistics,Memphis,South,Tennessee,USA,Emily Rodriguez,2020-09-19,B,Yes
+C020,TrueNorth Energy,Enterprise,Energy,Houston,South,Texas,USA,David Kim,2018-03-07,A,Yes
+C021,UrbanGrid Smart City,Government,Public Sector,Los Angeles,West,California,USA,Sarah Johnson,2019-10-22,A,Yes
+C022,Valor Defense Systems,Government,Defense,Arlington,East,Virginia,USA,Michael Chen,2017-07-15,A,Yes
+C023,WaveForm Media,SMB,Media,Nashville,South,Tennessee,USA,Emily Rodriguez,2021-12-01,B,No
+C024,XcelRate Fitness,Startup,Healthcare,Minneapolis,North,Minnesota,USA,David Kim,2022-09-05,C,Yes
+C025,Yellowstone Agri Corp,Enterprise,Agriculture,Boise,West,Idaho,USA,Sarah Johnson,2019-02-18,B,Yes
+C026,Zenith Aerospace,Enterprise,Aerospace,Huntsville,South,Alabama,USA,Michael Chen,2017-11-30,A,Yes
+C027,Acme Corp International,Enterprise,Manufacturing,Detroit,North,Michigan,USA,David Kim,2018-06-14,A,Yes
+C028,BlueShield Insurance,Enterprise,Financial Services,Hartford,East,Connecticut,USA,Emily Rodriguez,2019-04-22,A,Yes
+C029,CrestView Hotels,SMB,Hospitality,Orlando,South,Florida,USA,Sarah Johnson,2020-08-17,B,No
+C030,DynaCorp Consulting,SMB,Professional Services,Washington DC,East,District of Columbia,USA,Michael Chen,2021-03-09,B,Yes

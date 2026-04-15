@@ -1,0 +1,106 @@
+ProcessID,OrderID,DateKey,Department,ProcessStep,PlannedDuration_hrs,ActualDuration_hrs,DelayReason,Status,Priority,AssignedTo,StartDateTime,EndDateTime
+PRC-001,ORD-10001,20230101,Order Processing,Order Verification,2,2.5,Staff Shortage,Completed,High,Team Alpha,2023-01-01 08:00,2023-01-01 10:30
+PRC-002,ORD-10001,20230101,Warehouse,Pick & Pack,4,3.5,,Completed,High,Team Bravo,2023-01-01 11:00,2023-01-01 14:30
+PRC-003,ORD-10001,20230101,Shipping,Dispatch,2,4.5,Carrier Delay,Completed,High,Team Charlie,2023-01-01 15:00,2023-01-01 19:30
+PRC-004,ORD-10002,20230101,Order Processing,Order Verification,1,1,,Completed,Medium,Team Alpha,2023-01-01 09:00,2023-01-01 10:00
+PRC-005,ORD-10002,20230101,Fulfillment,License Provisioning,2,2,,Completed,Medium,Team Delta,2023-01-01 10:30,2023-01-01 12:30
+PRC-006,ORD-10003,20230102,Order Processing,Order Verification,2,3,System Downtime,Completed,High,Team Alpha,2023-01-02 08:00,2023-01-02 11:00
+PRC-007,ORD-10003,20230102,Service Delivery,Onboarding Setup,8,10,Complex Requirements,Completed,High,Team Echo,2023-01-02 12:00,2023-01-02 22:00
+PRC-008,ORD-10004,20230115,Order Processing,Order Verification,2,1.5,,Completed,High,Team Alpha,2023-01-15 08:00,2023-01-15 09:30
+PRC-009,ORD-10004,20230115,Fulfillment,Software Deployment,6,8,Integration Issues,Completed,High,Team Delta,2023-01-15 10:00,2023-01-15 18:00
+PRC-010,ORD-10005,20230115,Order Processing,Order Verification,1,1,,Completed,Medium,Team Alpha,2023-01-15 09:00,2023-01-15 10:00
+PRC-011,ORD-10005,20230115,Fulfillment,License Provisioning,2,2.5,Approval Pending,Completed,Medium,Team Delta,2023-01-15 10:30,2023-01-15 13:00
+PRC-012,ORD-10006,20230201,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2023-02-01 08:00,2023-02-01 10:00
+PRC-013,ORD-10006,20230201,Warehouse,Pick & Pack,4,5,Inventory Mismatch,Completed,High,Team Bravo,2023-02-01 10:30,2023-02-01 15:30
+PRC-014,ORD-10006,20230201,Quality Control,Inspection,2,2,,Completed,High,Team Foxtrot,2023-02-01 16:00,2023-02-01 18:00
+PRC-015,ORD-10006,20230201,Shipping,Dispatch,2,2.5,Weather Delay,Completed,High,Team Charlie,2023-02-01 18:30,2023-02-01 21:00
+PRC-016,ORD-10010,20230301,Order Processing,Order Verification,2,1.5,,Completed,High,Team Alpha,2023-03-01 08:00,2023-03-01 09:30
+PRC-017,ORD-10010,20230301,Warehouse,Pick & Pack,4,6,Staff Shortage,Completed,High,Team Bravo,2023-03-01 10:00,2023-03-01 16:00
+PRC-018,ORD-10010,20230301,Quality Control,Inspection,2,2,,Completed,High,Team Foxtrot,2023-03-01 16:30,2023-03-01 18:30
+PRC-019,ORD-10010,20230301,Shipping,Dispatch,2,3,Carrier Delay,Completed,High,Team Charlie,2023-03-01 19:00,2023-03-01 22:00
+PRC-020,ORD-10012,20230315,Order Processing,Order Verification,2,3.5,Approval Pending,Completed,High,Team Alpha,2023-03-15 08:00,2023-03-15 11:30
+PRC-021,ORD-10012,20230315,Service Delivery,Cloud Migration,24,30,Complex Requirements,Completed,Critical,Team Echo,2023-03-15 12:00,2023-03-17 18:00
+PRC-022,ORD-10016,20230415,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2023-04-15 08:00,2023-04-15 10:00
+PRC-023,ORD-10016,20230415,Warehouse,Pick & Pack,6,5.5,,Completed,High,Team Bravo,2023-04-15 10:30,2023-04-15 16:00
+PRC-024,ORD-10016,20230415,Quality Control,Inspection,3,4,Equipment Malfunction,Completed,High,Team Foxtrot,2023-04-15 16:30,2023-04-15 20:30
+PRC-025,ORD-10016,20230415,Shipping,Dispatch,3,3,,Completed,High,Team Charlie,2023-04-15 21:00,2023-04-16 00:00
+PRC-026,ORD-10019,20230501,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2023-05-01 08:00,2023-05-01 10:00
+PRC-027,ORD-10019,20230501,Service Delivery,Security Audit,16,14,,Completed,Critical,Team Echo,2023-05-01 10:30,2023-05-02 00:30
+PRC-028,ORD-10022,20230601,Order Processing,Order Verification,2,4,System Downtime,Completed,High,Team Alpha,2023-06-01 08:00,2023-06-01 12:00
+PRC-029,ORD-10022,20230601,Service Delivery,Cloud Migration,24,28,Integration Issues,Completed,Critical,Team Echo,2023-06-01 13:00,2023-06-03 17:00
+PRC-030,ORD-10024,20230615,Order Processing,Order Verification,2,1.5,,Completed,High,Team Alpha,2023-06-15 08:00,2023-06-15 09:30
+PRC-031,ORD-10024,20230615,Fulfillment,License Provisioning,4,5,Volume Processing,Completed,High,Team Delta,2023-06-15 10:00,2023-06-15 15:00
+PRC-032,ORD-10029,20230715,Order Processing,Order Verification,2,2.5,Staff Shortage,Completed,High,Team Alpha,2023-07-15 08:00,2023-07-15 10:30
+PRC-033,ORD-10029,20230715,Warehouse,Pick & Pack,6,8,Inventory Mismatch,Completed,High,Team Bravo,2023-07-15 11:00,2023-07-15 19:00
+PRC-034,ORD-10029,20230715,Quality Control,Inspection,3,3,,Completed,High,Team Foxtrot,2023-07-15 19:30,2023-07-15 22:30
+PRC-035,ORD-10029,20230715,Shipping,Dispatch,3,5,Carrier Delay,Completed,High,Team Charlie,2023-07-15 23:00,2023-07-16 04:00
+PRC-036,ORD-10030,20230801,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2023-08-01 08:00,2023-08-01 10:00
+PRC-037,ORD-10030,20230801,Warehouse,Pick & Pack,8,7,,Completed,High,Team Bravo,2023-08-01 10:30,2023-08-01 17:30
+PRC-038,ORD-10030,20230801,Quality Control,Inspection,3,3.5,Equipment Malfunction,Completed,High,Team Foxtrot,2023-08-01 18:00,2023-08-01 21:30
+PRC-039,ORD-10030,20230801,Shipping,Dispatch,3,3,,Completed,High,Team Charlie,2023-08-01 22:00,2023-08-02 01:00
+PRC-040,ORD-10034,20230901,Order Processing,Order Verification,2,3,Approval Pending,Completed,High,Team Alpha,2023-09-01 08:00,2023-09-01 11:00
+PRC-041,ORD-10034,20230901,Service Delivery,Cloud Migration,24,26,Complex Requirements,Completed,Critical,Team Echo,2023-09-01 12:00,2023-09-03 14:00
+PRC-042,ORD-10038,20231001,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2023-10-01 08:00,2023-10-01 10:00
+PRC-043,ORD-10038,20231001,Service Delivery,Security Audit,16,18,Staff Shortage,Completed,Critical,Team Echo,2023-10-01 10:30,2023-10-02 04:30
+PRC-044,ORD-10039,20231001,Order Processing,Order Verification,2,2.5,Approval Pending,Completed,High,Team Alpha,2023-10-01 09:00,2023-10-01 11:30
+PRC-045,ORD-10039,20231001,Warehouse,Pick & Pack,6,7,Inventory Mismatch,Completed,High,Team Bravo,2023-10-01 12:00,2023-10-01 19:00
+PRC-046,ORD-10039,20231001,Quality Control,Inspection,3,2.5,,Completed,High,Team Foxtrot,2023-10-01 19:30,2023-10-01 22:00
+PRC-047,ORD-10039,20231001,Shipping,Dispatch,3,4,Weather Delay,Completed,High,Team Charlie,2023-10-01 22:30,2023-10-02 02:30
+PRC-048,ORD-10044,20231115,Order Processing,Order Verification,2,1.5,,Completed,High,Team Alpha,2023-11-15 08:00,2023-11-15 09:30
+PRC-049,ORD-10044,20231115,Warehouse,Pick & Pack,4,4,,Completed,High,Team Bravo,2023-11-15 10:00,2023-11-15 14:00
+PRC-050,ORD-10044,20231115,Shipping,Dispatch,2,2,,Completed,High,Team Charlie,2023-11-15 14:30,2023-11-15 16:30
+PRC-051,ORD-10050,20231215,Order Processing,Order Verification,2,3,System Downtime,Completed,High,Team Alpha,2023-12-15 08:00,2023-12-15 11:00
+PRC-052,ORD-10050,20231215,Warehouse,Pick & Pack,4,5.5,Staff Shortage,Completed,High,Team Bravo,2023-12-15 11:30,2023-12-15 17:00
+PRC-053,ORD-10050,20231215,Quality Control,Inspection,2,2,,Completed,High,Team Foxtrot,2023-12-15 17:30,2023-12-15 19:30
+PRC-054,ORD-10050,20231215,Shipping,Dispatch,2,3.5,Carrier Delay,Completed,High,Team Charlie,2023-12-15 20:00,2023-12-15 23:30
+PRC-055,ORD-10053,20240115,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-01-15 08:00,2024-01-15 10:00
+PRC-056,ORD-10053,20240115,Warehouse,Pick & Pack,6,5,,Completed,High,Team Bravo,2024-01-15 10:30,2024-01-15 15:30
+PRC-057,ORD-10053,20240115,Quality Control,Inspection,3,2.5,,Completed,High,Team Foxtrot,2024-01-15 16:00,2024-01-15 18:30
+PRC-058,ORD-10053,20240115,Shipping,Dispatch,2,2,,Completed,High,Team Charlie,2024-01-15 19:00,2024-01-15 21:00
+PRC-059,ORD-10058,20240215,Order Processing,Order Verification,2,3.5,Approval Pending,Completed,High,Team Alpha,2024-02-15 08:00,2024-02-15 11:30
+PRC-060,ORD-10058,20240215,Service Delivery,Security Audit,16,20,Complex Requirements,Completed,Critical,Team Echo,2024-02-15 12:00,2024-02-17 08:00
+PRC-061,ORD-10062,20240315,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-03-15 08:00,2024-03-15 10:00
+PRC-062,ORD-10062,20240315,Service Delivery,Onboarding Setup,8,7,,Completed,High,Team Echo,2024-03-15 10:30,2024-03-15 17:30
+PRC-063,ORD-10067,20240501,Order Processing,Order Verification,2,2.5,Staff Shortage,Completed,High,Team Alpha,2024-05-01 08:00,2024-05-01 10:30
+PRC-064,ORD-10067,20240501,Warehouse,Pick & Pack,8,10,Inventory Mismatch,Completed,High,Team Bravo,2024-05-01 11:00,2024-05-01 21:00
+PRC-065,ORD-10067,20240501,Quality Control,Inspection,3,4,Equipment Malfunction,Completed,High,Team Foxtrot,2024-05-01 21:30,2024-05-02 01:30
+PRC-066,ORD-10067,20240501,Shipping,Dispatch,3,3,,Completed,High,Team Charlie,2024-05-02 02:00,2024-05-02 05:00
+PRC-067,ORD-10071,20240601,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-06-01 08:00,2024-06-01 10:00
+PRC-068,ORD-10071,20240601,Fulfillment,Software Deployment,4,3.5,,Completed,High,Team Delta,2024-06-01 10:30,2024-06-01 14:00
+PRC-069,ORD-10075,20240701,Order Processing,Order Verification,2,3,System Downtime,Completed,High,Team Alpha,2024-07-01 08:00,2024-07-01 11:00
+PRC-070,ORD-10075,20240701,Warehouse,Pick & Pack,8,9,Staff Shortage,Completed,Critical,Team Bravo,2024-07-01 11:30,2024-07-01 20:30
+PRC-071,ORD-10075,20240701,Quality Control,Inspection,3,3,,Completed,Critical,Team Foxtrot,2024-07-01 21:00,2024-07-02 00:00
+PRC-072,ORD-10075,20240701,Shipping,Dispatch,3,4.5,Carrier Delay,Completed,Critical,Team Charlie,2024-07-02 00:30,2024-07-02 05:00
+PRC-073,ORD-10077,20240715,Order Processing,Order Verification,2,1.5,,Completed,High,Team Alpha,2024-07-15 08:00,2024-07-15 09:30
+PRC-074,ORD-10077,20240715,Service Delivery,Cloud Migration,24,22,,Completed,Critical,Team Echo,2024-07-15 10:00,2024-07-17 08:00
+PRC-075,ORD-10079,20240801,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-08-01 08:00,2024-08-01 10:00
+PRC-076,ORD-10079,20240801,Warehouse,Pick & Pack,6,7.5,Inventory Mismatch,Completed,High,Team Bravo,2024-08-01 10:30,2024-08-01 18:00
+PRC-077,ORD-10079,20240801,Quality Control,Inspection,3,3,,Completed,High,Team Foxtrot,2024-08-01 18:30,2024-08-01 21:30
+PRC-078,ORD-10079,20240801,Shipping,Dispatch,3,2.5,,Completed,High,Team Charlie,2024-08-01 22:00,2024-08-02 00:30
+PRC-079,ORD-10083,20240901,Order Processing,Order Verification,2,2.5,Approval Pending,Completed,High,Team Alpha,2024-09-01 08:00,2024-09-01 10:30
+PRC-080,ORD-10083,20240901,Warehouse,Pick & Pack,6,5,,Completed,High,Team Bravo,2024-09-01 11:00,2024-09-01 16:00
+PRC-081,ORD-10083,20240901,Quality Control,Inspection,2,2,,Completed,High,Team Foxtrot,2024-09-01 16:30,2024-09-01 18:30
+PRC-082,ORD-10083,20240901,Shipping,Dispatch,2,2,,Completed,High,Team Charlie,2024-09-01 19:00,2024-09-01 21:00
+PRC-083,ORD-10087,20241001,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-10-01 08:00,2024-10-01 10:00
+PRC-084,ORD-10087,20241001,Warehouse,Pick & Pack,4,4.5,Staff Shortage,Completed,High,Team Bravo,2024-10-01 10:30,2024-10-01 15:00
+PRC-085,ORD-10087,20241001,Shipping,Dispatch,2,3,Weather Delay,Completed,High,Team Charlie,2024-10-01 15:30,2024-10-01 18:30
+PRC-086,ORD-10093,20241115,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-11-15 08:00,2024-11-15 10:00
+PRC-087,ORD-10093,20241115,Warehouse,Pick & Pack,6,6.5,,Completed,High,Team Bravo,2024-11-15 10:30,2024-11-15 17:00
+PRC-088,ORD-10093,20241115,Quality Control,Inspection,3,3,,Completed,High,Team Foxtrot,2024-11-15 17:30,2024-11-15 20:30
+PRC-089,ORD-10093,20241115,Shipping,Dispatch,3,2.5,,Completed,High,Team Charlie,2024-11-15 21:00,2024-11-15 23:30
+PRC-090,ORD-10095,20241201,Order Processing,Order Verification,2,3.5,System Downtime,Completed,High,Team Alpha,2024-12-01 08:00,2024-12-01 11:30
+PRC-091,ORD-10095,20241201,Service Delivery,Cloud Migration,24,32,Integration Issues,Completed,Critical,Team Echo,2024-12-01 12:00,2024-12-03 20:00
+PRC-092,ORD-10097,20241215,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2024-12-15 08:00,2024-12-15 10:00
+PRC-093,ORD-10097,20241215,Warehouse,Pick & Pack,6,5.5,,Completed,High,Team Bravo,2024-12-15 10:30,2024-12-15 16:00
+PRC-094,ORD-10097,20241215,Quality Control,Inspection,2,2,,Completed,High,Team Foxtrot,2024-12-15 16:30,2024-12-15 18:30
+PRC-095,ORD-10097,20241215,Shipping,Dispatch,2,2,,Completed,High,Team Charlie,2024-12-15 19:00,2024-12-15 21:00
+PRC-096,ORD-10099,20250101,Order Processing,Order Verification,2,2.5,Staff Shortage,Completed,High,Team Alpha,2025-01-01 08:00,2025-01-01 10:30
+PRC-097,ORD-10099,20250101,Warehouse,Pick & Pack,8,7,,Completed,Critical,Team Bravo,2025-01-01 11:00,2025-01-01 18:00
+PRC-098,ORD-10099,20250101,Quality Control,Inspection,3,2.5,,Completed,Critical,Team Foxtrot,2025-01-01 18:30,2025-01-01 21:00
+PRC-099,ORD-10099,20250101,Shipping,Dispatch,3,3,,Completed,Critical,Team Charlie,2025-01-01 21:30,2025-01-02 00:30
+PRC-100,ORD-10107,20250301,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2025-03-01 08:00,2025-03-01 10:00
+PRC-101,ORD-10107,20250301,Warehouse,Pick & Pack,8,9.5,Inventory Mismatch,Completed,High,Team Bravo,2025-03-01 10:30,2025-03-01 20:00
+PRC-102,ORD-10107,20250301,Quality Control,Inspection,3,3.5,Equipment Malfunction,Completed,High,Team Foxtrot,2025-03-01 20:30,2025-03-02 00:00
+PRC-103,ORD-10107,20250301,Shipping,Dispatch,3,4,Carrier Delay,Completed,High,Team Charlie,2025-03-02 00:30,2025-03-02 04:30
+PRC-104,ORD-10109,20250315,Order Processing,Order Verification,2,2,,Completed,High,Team Alpha,2025-03-15 08:00,2025-03-15 10:00
+PRC-105,ORD-10109,20250315,Service Delivery,Onboarding Setup,8,8,,Completed,High,Team Echo,2025-03-15 10:30,2025-03-15 18:30
